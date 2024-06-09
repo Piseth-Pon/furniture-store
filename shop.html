@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Furniture</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaquery.css">
+  <!-- Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- Top Header -->
+  <header>
+    <div class="logo">
+      <img src="./images/logo.png" alt="">
+      <h1 class="logo-text">MINIMALIST</h1>
+    </div>
+    <div class="menu">
+      <a href="#sidenav">
+        <ion-icon name="menu"></ion-icon>
+      </a>
+    </div>
+  </header>
+
+  <!-- Sidenav -->
+  <section class="sidenav" id="sidenav">
+    <div class="logo">
+      <img src="./images/logo.png" alt="">
+      <h1 class="logo-text">MINIMALIST</h1>
+    </div>
+
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="shop.html">SHOP</a>
+      <!-- <a href="product.html">PRODUCT</a> -->
+      <!-- <a href="cart.html">CART</a> -->
+    </nav>
+
+    <div class="icons-group">
+      <a href="cart.html">
+        <ion-icon name="cart-outline"></ion-icon>
+      </a>
+      <a href="#favorite">
+        <ion-icon name="heart-circle-outline"></ion-icon>
+      </a>
+      <a href="#search">
+        <ion-icon name="search-circle-outline"></ion-icon>
+      </a>
+    </div>
+
+    <button class="btn cross-btn">&cross;</button>
+  </section>
+
+  <!-- Banner -->
+
+  <!-- Main Container -->
+  <main class="main-container">
+    <section class="container">
+      <aside class="filter">
+        <div class="category">
+          <h4 class="title">Category</h4>
+          <a href="#">Chairs</a>
+          <a href="#">Beds</a>
+          <a href="#">Furniture</a>
+          <a href="#">Home Decor</a>
+          <a href="#">Table</a>
+          <a href="#">Accessories</a>
+        </div>
+
+        <div class="brand">
+          <h4 class="title">Brand</h4>
+          <label for="Amado">
+            <input type="checkbox" name="brand" id="Amado" value="Amado"> Amado
+          </label>
+          <label for="Ikea">
+            <input type="checkbox" name="brand" id="Ikea" value="Ikea"> Ikea
+          </label>
+          <label for="Artdeco">
+            <input type="checkbox" name="brand" id="Artdeco" value="Artdeco"> Artdeco
+          </label>
+          <label for="Furn Inc">
+            <input type="checkbox" name="brand" id="Furn Inc" value="Furn Inc"> Furn Inc
+          </label>
+          <label for="Minimalist">
+            <input type="checkbox" name="brand" id="Minimalist" value="Minimalist"> Minimalist
+          </label>
+
+        </div>
+
+      </aside>
+      <section class="items-container">
+        <h4 class="title">SHOWING 1-8 of 25</h4>
+        <div class="sorted-icons">
+          <ion-icon name="grid"></ion-icon>
+          <ion-icon name="list"></ion-icon>
+        </div>
+        
+        <div class="items-wrapper">
+
+          <div class="product-item">
+            <img src="./images/product-1.jpeg" alt="">
+            <div class="product-item-info">
+              <p class="price">$180</p>
+              <a href="product.html">Modern Chair</a>
+              <div class="stars">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+              <a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+            </div>
+          </div>
+
+
+        </div>
+
+      </section>
+    </section>
+
+    <section class="subscribe">
+      <div class="subscribe-intro">
+        <h2>Subscribe for a <span class="color">25% Discount</span></h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, accusamus? Officiis, debitis dolore officia
+          eius in impedit, facere ea, cupiditate qui quidem sit sint perspiciatis alias suscipit ipsam! Soluta, quaerat?
+        </p>
+      </div>
+
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email">
+        <button class="btn">Subscribe</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="logo">
+        <img src="./images/logo.png" alt="">
+        <h1 class="logo-text">MINIMALIST</h1>
+      </div>
+
+      <div class="socials">
+        <ion-icon name="logo-instagram"></ion-icon>
+        <ion-icon name="logo-pinterest"></ion-icon>
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-youtube"></ion-icon>
+      </div>
+    </footer>
+  </main>
+
+
+
+
+
+
+
+  <script type="module" src="./src/pages/shop.js"></script>
+</body>
+
+</html>
