@@ -1,5 +1,21 @@
-import { url, getOneProduct } from "../api/product_api.js"
+import { url, getOneProduct, getProductReviews, addToOrderCarts } from "../api/product_api.js"
 
+function displayProductReviews(reviews) {
+  const wrapper = document.querySelector(".product-review-wrapper")
+  wrapper.innerHTML = ``
+  for (let i = 0; i < reviews.length; i++) {
+    let currentReview = reviews[i]
+    wrapper.innerHTML += `
+        <div class="review">
+          <img src="./images/profile-1.jpeg" alt="">
+          <h4>${currentReview.username}a</h4>
+          <p>Rating: ${currentReview.rating}</p>
+          <p>${currentReview.comment}</p>
+        </div>
+    `
+  }
+
+}
 
 function displayProductDetail(product) {
   const productContainer = document.querySelector(".product-container")
@@ -13,6 +29,10 @@ function displayProductDetail(product) {
         <h2>${product.name}</h2>
         <p class="price">$${product.price}</p>
         <h4>${product.company.toUpperCase()}</h4>
+        <div class="amount">
+          <label>Amount</label>
+          <input type="number" id="amount" value="1">
+        <div>
         <button id="addToCart" data-recordid="${product.id}">Add to Cart</button>
       </div>
 
@@ -29,20 +49,7 @@ function displayProductDetail(product) {
       <h4>Reviews</h4>
 
       <div class="product-review-wrapper">
-
-        <div class="review">
-          <img src="./images/profile-1.jpeg" alt="">
-          <h4>Anna</h4>
-          <div class="stars">
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-          </div>
-        </div>
-
-
+        
       </div>
 
     </section>
@@ -60,8 +67,30 @@ window.addEventListener("DOMContentLoaded", async () => {
   // console.log(id)
 
   const product = await getOneProduct(id)
-  console.log(product)
+  // console.log(product)
   displayProductDetail(product)
+
+  let allReviews = await getProductReviews()
+  // console.log(allReviews)
+  let productReviews = allReviews.filter((review) => review.productId == id)
+  displayProductReviews(productReviews)
+  
+
+  const addToCart = document.querySelector("#addToCart")
+  const amountInput = document.querySelector("#amount")
+  addToCart.addEventListener("click", async () => {
+    let productId = addToCart.dataset.recordid
+    let amount = amountInput.value
+
+    let data = {
+      "productId": productId,
+      "amount": amount
+    }
+    // console.log(data)
+    await addToOrderCarts(data)
+    alert("add the product to carts successfully")
+    window.location.href = "cart.html"
+  })
 
 
 

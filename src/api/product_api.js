@@ -14,8 +14,28 @@ async function getOneProduct(id) {
 }
 
 
+async function getProductReviews() {
+  // const resultList = await client.collection('reviews').getList(1, 50, {filter: `productId == ${id}`})
+  // return resultList
+  const records = await client.collection('reviews').getFullList()
+  return records
+}
+
+async function getOrderCarts() {
+  const records = await client.collection('carts').getFullList()
+  return records
+}
+
+async function addToOrderCarts(data) {
+  const record = await client.collection("carts").create(data)
+  return true
+}
+
 export {
   url,
   getAllProducts,
-  getOneProduct
+  getOneProduct,
+  getProductReviews,
+  getOrderCarts,
+  addToOrderCarts
 }
