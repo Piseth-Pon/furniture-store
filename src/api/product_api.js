@@ -31,11 +31,17 @@ async function addToOrderCarts(data) {
   return true
 }
 
+async function deleteOrderCart(id) {
+  await client.collection('carts').delete(id);
+  return true
+}
+
 export {
   url,
   getAllProducts,
   getOneProduct,
   getProductReviews,
   getOrderCarts,
-  addToOrderCarts
+  addToOrderCarts,
+  deleteOrderCart
 }

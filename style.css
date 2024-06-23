@@ -523,3 +523,20 @@ tfoot {
   background-color: #FFC93C;
   height: 100px;
 }
+
+#deleteItemBtn {
+  cursor: pointer;
+  width: 50px;
+  color: white;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+  padding: 10px;
+  display: inline-block;
+  margin-left: 50px;
+  opacity: 0.5;
+}
+
+#deleteItemBtn:hover {
+  opacity: 1;
+}
